@@ -5,7 +5,7 @@
   "main": "index.js",
   "cdn": "dist/aframe-tooltip-component.min.js",
   "scripts": {
-    "dev": "budo index.js:../../dist/aframe-tooltip-component.min.js --port 7000 --live --open",
+    "dev": "budo index.js:dist/aframe-tooltip-component.min.js --port 7000 --live --open",
     "dist": "webpack index.js dist/aframe-tooltip-component.js && webpack -p index.js dist/aframe-tooltip-component.min.js",
     "lint": "semistandard -v | snazzy",
     "prepublish": "npm run dist",
@@ -64,5 +64,9 @@
       "examples/build.js",
       "dist/**"
     ]
+  },
+  "dependencies": {
+    "aframe-line-component": "^1.0.0",
+    "aframe-slice9-component": "^1.0.0"
   }
 }
