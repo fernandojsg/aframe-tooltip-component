@@ -1,4 +1,4 @@
-## aframe-tooltip-component
+## aframe-tooltip-component - WIP Please do not use it yet!
 
 [![Version](http://img.shields.io/npm/v/aframe-tooltip-component.svg?style=flat-square)](https://npmjs.org/package/aframe-tooltip-component)
 [![License](http://img.shields.io/npm/l/aframe-tooltip-component.svg?style=flat-square)](https://npmjs.org/package/aframe-tooltip-component)
@@ -6,6 +6,8 @@
 A Tooltip component for A-Frame.
 
 For [A-Frame](https://aframe.io).
+
+![](https://raw.githubusercontent.com/fernandojsg/aframe-tooltip-component/master/screenshot.png)
 
 ### API
 
