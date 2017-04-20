@@ -1,5 +1,4 @@
 /* global AFRAME */
-require('aframe-line-component');
 require('aframe-slice9-component');
 
 if (typeof AFRAME === 'undefined') {
