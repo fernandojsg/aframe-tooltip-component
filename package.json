@@ -1,6 +1,6 @@
 {
   "name": "aframe-tooltip-component",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A Tooltip component for A-Frame.",
   "main": "index.js",
   "cdn": "dist/aframe-tooltip-component.min.js",
