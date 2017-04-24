@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/* global AFRAME */
 	__webpack_require__(1);
@@ -58,6 +58,7 @@
 	  schema: {
 	    text: {default: ''},
 	    end: {type: 'vec3'},
+	    src: {default: ''},
 	    rotation: {type: 'vec3'},
 	    width: {default: 1, min: 0},
 	    height: {default: 1, min: 0},
@@ -84,7 +85,7 @@
 	    quad.addEventListener('loaded', function () {
 	      self.updateTooltip();
 	    });
-	    quad.setAttribute('slice9', {width: data.width, height: data.height, left: 20, right: 43, top: 20, bottom: 43, padding: 0.005, src: 'tooltip.png'});
+	    quad.setAttribute('slice9', {width: data.width, height: data.height, left: 20, right: 43, top: 20, bottom: 43, padding: 0.005, src: data.src});
 	    quad.setAttribute('rotation', data.rotation);
 	    quad.setAttribute('text', {width: 0.25, color: '#fff', value: data.text, align: 'center'});
 	    el.appendChild(quad);
@@ -151,9 +152,9 @@
 	 });
 
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/* global AFRAME */
 
@@ -370,5 +371,5 @@
 	}
 
 
-/***/ }
+/***/ })
 /******/ ]);

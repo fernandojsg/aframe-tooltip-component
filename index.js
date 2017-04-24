@@ -12,12 +12,14 @@ AFRAME.registerComponent('tooltip', {
   schema: {
     text: {default: ''},
     end: {type: 'vec3'},
+    src: {default: ''},
     rotation: {type: 'vec3'},
     width: {default: 1, min: 0},
     height: {default: 1, min: 0},
     lineColor: {default: '#fff', type: 'color'},
     lineHorizontalAlign: {default: 'left', oneOf: ['left', 'right', 'center']},
     lineVerticalAlign: {default: 'center', oneOf: ['top', 'bottom', 'center']},
+    opacity: {default: 1, min: 0, max: 1},
 /*
     targetType: {default: 'element', oneOf: ['element', 'position']},
     targetElement: {type: 'selector', if: {targetType: ['element']}},
@@ -38,13 +40,14 @@ AFRAME.registerComponent('tooltip', {
     quad.addEventListener('loaded', function () {
       self.updateTooltip();
     });
-    quad.setAttribute('slice9', {width: data.width, height: data.height, left: 20, right: 43, top: 20, bottom: 43, padding: 0.005, src: 'tooltip.png'});
+
+    quad.setAttribute('slice9', {width: data.width, height: data.height, left: 20, right: 43, top: 20, bottom: 43, padding: 0.005, src: data.src});
     quad.setAttribute('rotation', data.rotation);
     quad.setAttribute('text', {width: 0.25, color: '#fff', value: data.text, align: 'center'});
     el.appendChild(quad);
 
     // Line
-    var material = this.material = new THREE.LineBasicMaterial({color: this.data.lineColor});
+    var material = this.material = new THREE.LineBasicMaterial({color: data.lineColor, opacity: data.opacity, transparent: data.opacity < 1});
     var geometry = this.geometry = new THREE.BufferGeometry();
     geometry.addAttribute('position', new THREE.BufferAttribute(new Float32Array(2 * 3), 3));
 
@@ -82,6 +85,9 @@ AFRAME.registerComponent('tooltip', {
        var y = valign[data.lineVerticalAlign];
        var x = halign[data.lineHorizontalAlign];
 
+       this.quad.setAttribute('slice9', {opacity: data.opacity});
+       this.quad.setAttribute('text', {opacity: data.opacity});
+
        // Update geometry
        this.quad.object3D.updateMatrix();
        startPosition.set(x, y, 0);
@@ -95,6 +101,9 @@ AFRAME.registerComponent('tooltip', {
        pos[4] = endPosition.y;
        pos[5] = endPosition.z;
        this.geometry.attributes.position.needsUpdate = true;
+
+       this.material.opacity = data.opacity;
+       this.material.transparent = data.opacity < 1;
        this.material.color.setStyle(data.color);
      }
    })(),
