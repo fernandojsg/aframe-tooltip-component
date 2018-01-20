@@ -86,7 +86,7 @@ AFRAME.registerComponent('tooltip', {
        var x = halign[data.lineHorizontalAlign];
 
        this.quad.setAttribute('slice9', {opacity: data.opacity});
-       this.quad.setAttribute('text', {opacity: data.opacity});
+       this.quad.setAttribute('text', {opacity: data.opacity, value: data.text});
 
        // Update geometry
        this.quad.object3D.updateMatrix();
