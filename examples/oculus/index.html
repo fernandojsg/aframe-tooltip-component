@@ -2,7 +2,7 @@
   <head>
     <title>A-Frame Tooltip Component - Basic</title>
     <meta name="description" content="Basic example for Tooltip component."></meta>
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+   <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <script src="../../dist/aframe-tooltip-component.min.js"></script>
   </head>
   <body>
@@ -13,44 +13,52 @@
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-entity oculus-touch-controls="hand: right">
-        <a-entity id="tooltip_a" tooltip="text: Button A; width: 0.06; height: 0.03; targetPosition: -0.011 0.0 0.058; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png"
-            position="-0.070 0.006 0.053">
+     
+          <!-- position first number is left -ve and right +ve on the controler
+           2nd number is forward +ve and back -ve 
+           3rd number  is up (-ve) and down (+ve) -->
+       
+     <!-- TheTTguy - corrected co-ordinates for Right controler-->
+        <a-entity id="tooltip_a" tooltip="text: Button A; width: 0.06; height: 0.03; targetPosition: -0.005 0.010 -0.015; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png"
+            position="-0.100 0.025 0.00">
         </a-entity>
-        <a-entity id="tooltip_b" tooltip="text: Button B; width: 0.06; height: 0.03; targetPosition: -0.017 -0.008 0.047; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png"
-            position="-0.065 0.001 0.020">
+     
+        <a-entity id="tooltip_b" tooltip="text: Button B; width: 0.06; height: 0.03; targetPosition:  -0.011 0.002 -0.026; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png"
+            position="-0.095 0.02 -0.053">
+       </a-entity>
+        
+       
+        <a-entity id="tooltip_mainmenu" tooltip="text: Main menu; width: 0.07; height: 0.03; targetPosition: 0.015 0.0100 -0.015; lineVerticalAlign: center; rotation: -90 0 0; src:tooltip.png" position="0.100 0.04 0.013"></a-entity>
+        <a-entity id="tooltip_thumb" tooltip="text: Thumbstick; width: 0.07; height: 0.03; targetPosition: 0.0074 0.004 -0.027; lineHorizontalAlign: center; lineVerticalAlign: bottom; rotation: -90 0 0; src:tooltip.png"  position="-0.042 -0.008 -0.092">        </a-entity>
+        <a-entity id="tooltip_trigger" tooltip="text: Trigger; width: 0.07; height: 0.03; targetPosition: -0.0002 -0.035 -0.025; lineHorizontalAlign: left; rotation: -90 0 0; src:tooltip.png"  position="0.10 -0.021 -0.053"> </a-entity>
+                                                                                                                                                                                        
+        <a-entity id="tooltip_grip" tooltip="text: Grip; width: 0.06; height: 0.03; targetPosition: -0.001 0.002 0.014; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png" position="-0.09 0.009 0.067 "> </a-entity>
+     </a-entity>
+     
+
+        
+       <!-- TheTTguy - corrected co-ordinates for Left controler-->
+    <!-- position first number is left -ve and right +ve on the controler
+           2nd number is forward +ve and back -ve 
+           3rd number  is up (-ve) and down (+ve) -->
+        <a-entity oculus-touch-controls="hand: left">
+        <a-entity id="tooltip_x" tooltip="text: Button X; width: 0.06; height: 0.03; targetPosition: 0.005 0.01 -0.015; rotation: -90 0 0; src:tooltip.png"  position="0.065 0.025 0">
+        </a-entity>                                                                                                                                                                      
+        <a-entity id="tooltip_y" tooltip="text: Button Y; width: 0.06; height: 0.03; targetPosition: 0.011 0.002 -0.026; rotation: -90 0 0; src:tooltip.png"  position="0.06 0.02 -0.063">
         </a-entity>
-        <a-entity id="tooltip_mainmenu" tooltip="text: Main menu; width: 0.07; height: 0.03; targetPosition: 0.003 0.0013 0.062; lineVerticalAlign: center; rotation: -90 0 0; src:tooltip.png"
-            position="0.074 0.021 0.066">
+                                                                                                        
+        <a-entity id="tooltip_mainmenu" tooltip="text: Main menu; width: 0.07; height: 0.03; targetPosition: -0.015 0.010 -0.015; lineHorizontalAlign: right; lineVerticalAlign: center; rotation: -90 0 0; src:tooltip.png" position="-0.079 0.045 0.013">
         </a-entity>
-        <a-entity id="tooltip_thumb" tooltip="text: Thumbstick; width: 0.07; height: 0.03; targetPosition: 0.0014 -0.006 0.046; lineHorizontalAlign: center; lineVerticalAlign: bottom; rotation: -90 0 0; src:tooltip.png"
-            position="-0.012 -0.027 -0.039">
+        
+        <a-entity id="tooltip_thumb" tooltip="text: Thumbstick; width: 0.07; height: 0.03; targetPosition: -0.0074 0.004 -0.027; lineHorizontalAlign: center; lineVerticalAlign: bottom; rotation: -90 0 0; src:tooltip.png" position="0.007 -0.008 -0.092">
         </a-entity>
-        <a-entity id="tooltip_trigger" tooltip="text: Trigger; width: 0.07; height: 0.03; targetPosition: -0.0062 -0.033 0.048; lineHorizontalAlign: left; rotation: -90 0 0; src:tooltip.png"
-            position="0.09 -0.04 0">
+        
+        <a-entity id="tooltip_trigger" tooltip="text: Trigger; width: 0.07; height: 0.03; targetPosition: -0.0002 -0.035 -0.025; lineHorizontalAlign: right; rotation: -90 0 0; src:tooltip.png" position="-0.095 -0.021 -0.053">
         </a-entity>
-        <a-entity id="tooltip_grip" tooltip="text: Grip; width: 0.06; height: 0.03; targetPosition: -0.007 -0.008 0.087; rotation: -90 0 0; lineHorizontalAlign: right; src:tooltip.png"
-            position="-0.06 -0.01 0.12">
+       
+        <a-entity id="tooltip_grip" tooltip="text: Grip; width: 0.06; height: 0.03; targetPosition: 0.006 0.002 0.014; rotation: -90 0 0; src:tooltip.png" position="0.055 0.009 0.067">
         </a-entity>
-      </a-entity>
-      <a-entity oculus-touch-controls="hand: left">
-        <a-entity id="tooltip_x" tooltip="text: Button X; width: 0.06; height: 0.03; targetPosition: 0.011 0.0 0.058; rotation: -90 0 0; src:tooltip.png"
-            position="0.070 0.006 0.053">
-        </a-entity>
-        <a-entity id="tooltip_y" tooltip="text: Button Y; width: 0.06; height: 0.03; targetPosition: 0.017 -0.008 0.047; rotation: -90 0 0; src:tooltip.png"
-            position="0.065 0.001 0.020">
-        </a-entity>
-        <a-entity id="tooltip_mainmenu" tooltip="text: Main menu; width: 0.07; height: 0.03; targetPosition: -0.003 0.0013 0.062; lineHorizontalAlign: right; lineVerticalAlign: center; rotation: -90 0 0; src:tooltip.png"
-            position="-0.074 0.021 0.066">
-        </a-entity>
-        <a-entity id="tooltip_thumb" tooltip="text: Thumbstick; width: 0.07; height: 0.03; targetPosition: -0.0014 -0.006 0.046; lineHorizontalAlign: center; lineVerticalAlign: bottom; rotation: -90 0 0; src:tooltip.png"
-            position="0.012 -0.027 -0.039">
-        </a-entity>
-        <a-entity id="tooltip_trigger" tooltip="text: Trigger; width: 0.07; height: 0.03; targetPosition: 0.0062 -0.033 0.048; lineHorizontalAlign: right; rotation: -90 0 0; src:tooltip.png"
-            position="-0.09 -0.04 0">
-        </a-entity>
-        <a-entity id="tooltip_grip" tooltip="text: Grip; width: 0.06; height: 0.03; targetPosition: 0.007 -0.008 0.087; rotation: -90 0 0; src:tooltip.png"
-            position="0.06 -0.01 0.12">
-        </a-entity>
+       
       </a-entity>
     </a-scene>
 
